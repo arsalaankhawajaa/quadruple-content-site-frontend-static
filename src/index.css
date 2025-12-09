@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Archivo:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+@import "./ui/theme.css";
+
+html {
+  font-family: Manrope;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+#root {
+  flex-grow: 1;
+}
