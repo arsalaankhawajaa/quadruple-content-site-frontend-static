@@ -49,7 +49,7 @@ const BlogPostCardSmallRoot = React.forwardRef<
           />
         </div>
       ) : null}
-      <div className="flex w-56 grow shrink-0 basis-0 flex-col items-start justify-center gap-4">
+      <div className="flex w-full grow shrink-0 basis-0 flex-col items-start justify-center gap-4">
         <div className="flex w-full grow shrink-0 basis-0 items-end justify-between">
           {tag ? (
             <span className="text-monospace-body font-monospace-body text-brand-700">
