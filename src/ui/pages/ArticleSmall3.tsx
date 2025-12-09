@@ -5,6 +5,10 @@ import { Link } from "react-router-dom";
 import { BlogPostCardSmall } from "@/ui/components/BlogPostCardSmall";
 import { ModernNavbar } from "@/ui/components/ModernNavbar";
 import { ModernNavbarMobile } from "@/ui/components/ModernNavbarMobile";
+import blogPostSmall3Image from "@/assets/images/blogpostsmall3.jpg";
+import blogPostLargeImage from "@/assets/images/blogpostlarge.jpg";
+import blogPostSmall1Image from "@/assets/images/blogpostsmall1.jpg";
+import blogPostSmall2Image from "@/assets/images/blogpostsmall2.jpg";
 
 function ArticleSmallPage3() {
   return (
@@ -25,7 +29,7 @@ function ArticleSmallPage3() {
         <div className="flex w-full flex-col items-center gap-12 py-6 mobile:w-full mobile:grow mobile:shrink-0 mobile:basis-0">
           <img
             className="h-144 w-full flex-none rounded-lg object-cover mobile:h-auto mobile:w-auto mobile:flex-none mobile:object-fill"
-            src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=600&fit=crop"
+            src={blogPostSmall3Image}
           />
         </div>
         <div className="flex w-full max-w-[768px] flex-col items-start gap-12">
@@ -104,7 +108,7 @@ function ArticleSmallPage3() {
           <div className="flex w-full items-start justify-center gap-12 mobile:flex-col mobile:flex-nowrap mobile:gap-12">
             <Link to="/llms-unstructured-information-engines" className="w-full">
               <BlogPostCardSmall
-                image="https://res.cloudinary.com/subframe/image/upload/v1711417576/shared/bsa3eonjzvhxusz9aqgr.png"
+                image={blogPostLargeImage}
                 tag="FEATURED"
                 date="Oct 8, 2025"
                 title="LLMs are unstructured information engines, not software systems"
@@ -113,7 +117,7 @@ function ArticleSmallPage3() {
             </Link>
             <Link to="/context-engineering-enterprise-ai-stack" className="w-full">
               <BlogPostCardSmall
-                image="https://res.cloudinary.com/subframe/image/upload/v1711417563/shared/fhksgncxojucwek3x715.png"
+                image={blogPostSmall1Image}
                 tag="FEATURED"
                 date="Oct 9, 2025"
                 title="Context engineering is the real enterprise AI stack"
@@ -123,7 +127,7 @@ function ArticleSmallPage3() {
             <Link to="/local-experimentation-read-first-guardrails" className="w-full mobile:hidden">
               <BlogPostCardSmall
                 className="mobile:hidden"
-                image="https://res.cloudinary.com/subframe/image/upload/v1711417511/shared/t4qorgih4yjwudzjfkxq.png"
+                image={blogPostSmall2Image}
                 tag="FEATURED"
                 date="Oct 10, 2025"
                 title="Local experimentation, with read first guardrails"

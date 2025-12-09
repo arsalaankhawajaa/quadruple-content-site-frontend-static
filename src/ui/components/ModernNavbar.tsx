@@ -79,6 +79,11 @@ const ModernNavbarRoot = React.forwardRef<
             Enterprise
           </span>
         </Link>
+        <Link to="/#learn" className="flex h-full cursor-pointer flex-col items-center justify-center gap-4">
+          <span className="text-body-bold font-body-bold text-subtext-color hover:text-default-font">
+            Learn
+          </span>
+        </Link>
         <Link to="/#contact" className="flex flex-col items-center justify-center gap-4 self-stretch">
           <span className="text-body-bold font-body-bold text-default-font">
             Contact

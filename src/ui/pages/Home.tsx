@@ -1,7 +1,7 @@
 "use client";
 
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { BlogPostCardLarge } from "@/ui/components/BlogPostCardLarge";
 import { BlogPostCardSmall } from "@/ui/components/BlogPostCardSmall";
 import { Button } from "@/ui/components/Button";
@@ -20,8 +20,27 @@ import HACLogo from "@/assets/images/HAC_Master-Logo_RGB_REV.png.webp";
 import MagicTemplatesLogo from "@/assets/images/magicTemplates-logo.png";
 import OmnicheLogo from "@/assets/images/omniche-advisory.png";
 import TAGLogo from "@/assets/images/TAG logo.png";
+import blogPostLargeImage from "@/assets/images/blogpostlarge.jpg";
+import blogPostSmall1Image from "@/assets/images/blogpostsmall1.jpg";
+import blogPostSmall2Image from "@/assets/images/blogpostsmall2.jpg";
+import blogPostSmall3Image from "@/assets/images/blogpostsmall3.jpg";
 
 function Home() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        setTimeout(() => {
+          const yOffset = -80; // Offset for navbar
+          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [location.hash]);
+
   return (
     <div className="flex h-full w-full flex-col items-center bg-default-background">
       <div className="flex w-full flex-col items-center justify-center gap-2 px-12 py-6 mobile:flex-col mobile:flex-nowrap mobile:gap-0 mobile:px-4 mobile:py-4">
@@ -66,7 +85,7 @@ function Home() {
               </span>
               <Link to="/llms-unstructured-information-engines" className="w-full">
                 <BlogPostCardLarge
-                  image="https://res.cloudinary.com/subframe/image/upload/v1711417576/shared/bsa3eonjzvhxusz9aqgr.png"
+                  image={blogPostLargeImage}
                   category="FEATURED"
                   title="LLMs are unstructured information engines, not software systems"
                   date="Oct 8, 2025"
@@ -80,7 +99,7 @@ function Home() {
               <div className="flex flex-col items-start gap-12">
                 <Link to="/context-engineering-enterprise-ai-stack" className="w-full">
                   <BlogPostCardSmall
-                    image="https://res.cloudinary.com/subframe/image/upload/v1711417563/shared/fhksgncxojucwek3x715.png"
+                    image={blogPostSmall1Image}
                     tag="FEATURED"
                     date="Oct 9, 2025"
                     title="Context engineering is the real enterprise AI stack"
@@ -89,7 +108,7 @@ function Home() {
                 </Link>
                 <Link to="/local-experimentation-read-first-guardrails" className="w-full">
                   <BlogPostCardSmall
-                    image="https://res.cloudinary.com/subframe/image/upload/v1711417511/shared/t4qorgih4yjwudzjfkxq.png"
+                    image={blogPostSmall2Image}
                     tag="FEATURED"
                     date="Oct 10, 2025"
                     title="Local experimentation, with read first guardrails"
@@ -98,7 +117,7 @@ function Home() {
                 </Link>
                 <Link to="/how-to-end-work-slop" className="w-full">
                   <BlogPostCardSmall
-                    image="https://res.cloudinary.com/subframe/image/upload/v1711417512/shared/btvntvzhdbhpulae3kzk.jpg"
+                    image={blogPostSmall3Image}
                     tag="FEATURED"
                     date="Oct 11, 2025"
                     title="How to end work slop"
@@ -270,7 +289,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <div id="contact" className="flex w-full flex-col items-center bg-brand-accent-100 px-12 pt-32 pb-20 bg-gradient-to-b from-brand-accent-200 to-transparent mobile:px-6 mobile:pt-32 mobile:pb-20">
+        <div id="learn" className="flex w-full flex-col items-center bg-brand-accent-100 px-12 pt-32 pb-20 bg-gradient-to-b from-brand-accent-200 to-transparent mobile:px-6 mobile:pt-32 mobile:pb-20">
           <div className="flex w-full max-w-screen-2xl items-start gap-6 pt-16 pb-8 mobile:flex-col mobile:flex-nowrap mobile:gap-6">
             <div className="flex grow shrink-0 basis-0 flex-col items-start gap-8 self-stretch pl-4 mobile:px-0 mobile:py-0">
               <div className="flex w-full flex-col items-start gap-6">
@@ -368,7 +387,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className="flex w-full flex-col items-center px-12 pt-16 pb-24">
+        <div id="contact" className="flex w-full flex-col items-center px-12 pt-16 pb-24">
           <div className="flex w-full max-w-screen-2xl flex-col items-center justify-center gap-12 bg-default-background px-4 py-32 mobile:px-0 mobile:py-6">
             <div className="flex w-full flex-col items-center justify-center gap-6">
               <span className="w-full text-heading-1 font-heading-1 text-default-font text-center -tracking-[0.035em]">
