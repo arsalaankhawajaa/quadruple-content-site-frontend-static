@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Link } from "react-router-dom";
 import { BlogPostCardSmall } from "@/ui/components/BlogPostCardSmall";
 import { ModernNavbar } from "@/ui/components/ModernNavbar";
 import { ModernNavbarMobile } from "@/ui/components/ModernNavbarMobile";
@@ -93,34 +94,34 @@ function ArticleSmallPage2() {
             Recommended Reading
           </span>
           <div className="flex w-full items-start justify-center gap-12 mobile:flex-col mobile:flex-nowrap mobile:gap-12">
-            <BlogPostCardSmall
-              image="https://res.cloudinary.com/subframe/image/upload/v1711417510/shared/esj02idt9sf1mhn7xuw8.png"
-              tag="FEATURED"
-              date="Apr 3, 2024"
-              title="Why we are launching Subframe."
-              subtitle={
-                "Testing this subtitle out by writing random  stuff.\nTesting this subtitle out by writing random  stuff.\n"
-              }
-            />
-            <BlogPostCardSmall
-              image="https://res.cloudinary.com/subframe/image/upload/v1711417510/shared/esj02idt9sf1mhn7xuw8.png"
-              tag="FEATURED"
-              date="Apr 3, 2024"
-              title="Why we are launching Subframe."
-              subtitle={
-                "Testing this subtitle out by writing random  stuff.\nTesting this subtitle out by writing random  stuff.\n"
-              }
-            />
-            <BlogPostCardSmall
-              className="mobile:hidden"
-              image="https://res.cloudinary.com/subframe/image/upload/v1711417510/shared/esj02idt9sf1mhn7xuw8.png"
-              tag="FEATURED"
-              date="Apr 3, 2024"
-              title="Why we are launching Subframe."
-              subtitle={
-                "Testing this subtitle out by writing random  stuff.\nTesting this subtitle out by writing random  stuff.\n"
-              }
-            />
+            <Link to="/llms-unstructured-information-engines" className="w-full">
+              <BlogPostCardSmall
+                image="https://res.cloudinary.com/subframe/image/upload/v1711417576/shared/bsa3eonjzvhxusz9aqgr.png"
+                tag="FEATURED"
+                date="Oct 8, 2025"
+                title="LLMs are unstructured information engines, not software systems"
+                subtitle="Most teams still talk about large language models as if they are a new kind of application. They are not. In production, the value of an LLM is simple. It can read messy inputs and produce useful structure."
+              />
+            </Link>
+            <Link to="/context-engineering-enterprise-ai-stack" className="w-full">
+              <BlogPostCardSmall
+                image="https://res.cloudinary.com/subframe/image/upload/v1711417563/shared/fhksgncxojucwek3x715.png"
+                tag="FEATURED"
+                date="Oct 9, 2025"
+                title="Context engineering is the real enterprise AI stack"
+                subtitle="Most teams still treat AI as a model selection problem. It is not. The difference between a demo and a dependable system is whether the model gets the right context at the right time, in a format it can use."
+              />
+            </Link>
+            <Link to="/how-to-end-work-slop" className="w-full mobile:hidden">
+              <BlogPostCardSmall
+                className="mobile:hidden"
+                image="https://res.cloudinary.com/subframe/image/upload/v1711417512/shared/btvntvzhdbhpulae3kzk.jpg"
+                tag="FEATURED"
+                date="Oct 11, 2025"
+                title="How to end work slop"
+                subtitle="Work slop is what happens when AI turns vague thoughts into polished output. It looks productive, but it does not move decisions forward. The fix is not banning AI. The fix is controlling inputs."
+              />
+            </Link>
           </div>
         </div>
       </div>

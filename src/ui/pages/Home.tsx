@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 import { BlogPostCardLarge } from "@/ui/components/BlogPostCardLarge";
 import { BlogPostCardSmall } from "@/ui/components/BlogPostCardSmall";
 import { Button } from "@/ui/components/Button";
@@ -12,27 +12,16 @@ import { TextArea } from "@/ui/components/TextArea";
 import { TextField } from "@/ui/components/TextField";
 import { FeatherArrowRight } from "@subframe/core";
 import { FeatherChevronRight } from "@subframe/core";
-import blogPostLargeImage from "@/assets/images/blogpostlarge.jpg";
-import blogPostSmall1Image from "@/assets/images/blogpostsmall1.jpg";
-import blogPostSmall2Image from "@/assets/images/blogpostsmall2.jpg";
-import blogPostSmall3Image from "@/assets/images/blogpostsmall3.jpg";
+import ABGFLogo from "@/assets/images/ABGF-logo.png";
+import AltiusLogo from "@/assets/images/Altius-logo.png";
+import BCRLogo from "@/assets/images/bcr logo.png";
+import CureeLogo from "@/assets/images/Curee-logo.png";
+import HACLogo from "@/assets/images/HAC_Master-Logo_RGB_REV.png.webp";
+import MagicTemplatesLogo from "@/assets/images/magicTemplates-logo.png";
+import OmnicheLogo from "@/assets/images/omniche-advisory.png";
+import TAGLogo from "@/assets/images/TAG logo.png";
 
 function Home() {
-  const location = useLocation();
-
-  useEffect(() => {
-    if (location.hash) {
-      const element = document.querySelector(location.hash);
-      if (element) {
-        setTimeout(() => {
-          const yOffset = -80; // Offset for navbar
-          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-          window.scrollTo({ top: y, behavior: 'smooth' });
-        }, 100);
-      }
-    }
-  }, [location.hash]);
-
   return (
     <div className="flex h-full w-full flex-col items-center bg-default-background">
       <div className="flex w-full flex-col items-center justify-center gap-2 px-12 py-6 mobile:flex-col mobile:flex-nowrap mobile:gap-0 mobile:px-4 mobile:py-4">
@@ -77,7 +66,7 @@ function Home() {
               </span>
               <Link to="/llms-unstructured-information-engines" className="w-full">
                 <BlogPostCardLarge
-                  image={blogPostLargeImage}
+                  image="https://res.cloudinary.com/subframe/image/upload/v1711417576/shared/bsa3eonjzvhxusz9aqgr.png"
                   category="FEATURED"
                   title="LLMs are unstructured information engines, not software systems"
                   date="Oct 8, 2025"
@@ -91,29 +80,29 @@ function Home() {
               <div className="flex flex-col items-start gap-12">
                 <Link to="/context-engineering-enterprise-ai-stack" className="w-full">
                   <BlogPostCardSmall
-                    image={blogPostSmall1Image}
+                    image="https://res.cloudinary.com/subframe/image/upload/v1711417563/shared/fhksgncxojucwek3x715.png"
                     tag="FEATURED"
                     date="Oct 9, 2025"
                     title="Context engineering is the real enterprise AI stack"
-                    subtitle="Most teams still treat AI as a model selection problem. It is not."
+                    subtitle="Most teams still treat AI as a model selection problem. It is not. The difference between a demo and a dependable system is whether the model gets the right context at the right time, in a format it can use."
                   />
                 </Link>
                 <Link to="/local-experimentation-read-first-guardrails" className="w-full">
                   <BlogPostCardSmall
-                    image={blogPostSmall2Image}
+                    image="https://res.cloudinary.com/subframe/image/upload/v1711417511/shared/t4qorgih4yjwudzjfkxq.png"
                     tag="FEATURED"
                     date="Oct 10, 2025"
                     title="Local experimentation, with read first guardrails"
-                    subtitle="AI adoption rarely succeeds as a single top down rollout. It spreads through small experiments."
+                    subtitle="AI adoption rarely succeeds as a single top down rollout. It spreads through small experiments inside teams that have real work to do. The goal is not to stop that. The goal is to make it safe and useful."
                   />
                 </Link>
                 <Link to="/how-to-end-work-slop" className="w-full">
                   <BlogPostCardSmall
-                    image={blogPostSmall3Image}
+                    image="https://res.cloudinary.com/subframe/image/upload/v1711417512/shared/btvntvzhdbhpulae3kzk.jpg"
                     tag="FEATURED"
                     date="Oct 11, 2025"
                     title="How to end work slop"
-                    subtitle="Work slop is what happens when AI turns vague thoughts into polished output. The fix is not banning AI. The fix is controlling inputs."
+                    subtitle="Work slop is what happens when AI turns vague thoughts into polished output. It looks productive, but it does not move decisions forward. The fix is not banning AI. The fix is controlling inputs."
                   />
                 </Link>
               </div>
@@ -134,37 +123,57 @@ function Home() {
               <div className="flex grow shrink-0 basis-0 items-center justify-center gap-4 rounded-md px-6 py-6">
                 <img
                   className="h-10 flex-none object-cover grayscale contrast-200"
-                  src="https://res.cloudinary.com/subframe/image/upload/v1711417548/shared/xstm8znaw99taqy2omsq.png"
+                  src={ABGFLogo}
+                  alt="ABGF"
                 />
               </div>
               <div className="flex grow shrink-0 basis-0 items-center justify-center gap-4 rounded-md px-6 py-6">
                 <img
                   className="h-10 flex-none object-cover grayscale contrast-200"
-                  src="https://res.cloudinary.com/subframe/image/upload/v1711417549/shared/jtjkdxvy1mm2ozvaymwv.png"
+                  src={AltiusLogo}
+                  alt="Altius"
                 />
               </div>
               <div className="flex grow shrink-0 basis-0 items-center justify-center gap-4 rounded-md px-6 py-6">
                 <img
                   className="h-10 flex-none object-cover grayscale contrast-200"
-                  src="https://res.cloudinary.com/subframe/image/upload/v1711417555/shared/dkh8m7duzxhvdhs0hyxr.png"
+                  src={BCRLogo}
+                  alt="BCR"
                 />
               </div>
               <div className="flex grow shrink-0 basis-0 items-center justify-center gap-4 rounded-md px-6 py-6">
                 <img
                   className="h-10 flex-none object-cover grayscale contrast-200"
-                  src="https://res.cloudinary.com/subframe/image/upload/v1711417531/shared/fwzpu385itsjirvkop07.png"
+                  src={CureeLogo}
+                  alt="Curee"
                 />
               </div>
               <div className="flex grow shrink-0 basis-0 items-center justify-center gap-4 rounded-md px-6 py-6">
                 <img
                   className="h-10 flex-none object-cover grayscale contrast-200"
-                  src="https://res.cloudinary.com/subframe/image/upload/v1711417536/shared/vuaebacyjpqj2yprcwke.png"
+                  src={HACLogo}
+                  alt="HAC"
                 />
               </div>
               <div className="flex grow shrink-0 basis-0 items-center justify-center gap-4 rounded-md px-6 py-6">
                 <img
                   className="h-10 flex-none object-cover grayscale contrast-200"
-                  src="https://res.cloudinary.com/subframe/image/upload/v1711417532/shared/ofdixj8whhbrmgahq506.png"
+                  src={MagicTemplatesLogo}
+                  alt="Magic Templates"
+                />
+              </div>
+              <div className="flex grow shrink-0 basis-0 items-center justify-center gap-4 rounded-md px-6 py-6">
+                <img
+                  className="h-10 flex-none object-cover grayscale contrast-200"
+                  src={OmnicheLogo}
+                  alt="Omniche Advisory"
+                />
+              </div>
+              <div className="flex grow shrink-0 basis-0 items-center justify-center gap-4 rounded-md px-6 py-6">
+                <img
+                  className="h-10 flex-none object-cover grayscale contrast-200"
+                  src={TAGLogo}
+                  alt="TAG"
                 />
               </div>
             </div>
@@ -359,7 +368,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <div id="know-what-you-need" className="flex w-full flex-col items-center px-12 pt-16 pb-24">
+        <div className="flex w-full flex-col items-center px-12 pt-16 pb-24">
           <div className="flex w-full max-w-screen-2xl flex-col items-center justify-center gap-12 bg-default-background px-4 py-32 mobile:px-0 mobile:py-6">
             <div className="flex w-full flex-col items-center justify-center gap-6">
               <span className="w-full text-heading-1 font-heading-1 text-default-font text-center -tracking-[0.035em]">
